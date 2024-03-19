@@ -93,3 +93,5 @@ do_test_api[network] = "1"
 do_test_api[depends] += "curl-native:do_populate_sysroot os-helpers-native:do_populate_sysroot ca-certificates-native:do_populate_sysroot"
 
 BBCLASSEXTEND = "native"
+
+do_install[nostamp] = "1"
