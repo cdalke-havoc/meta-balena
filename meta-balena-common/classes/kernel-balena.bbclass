@@ -237,6 +237,7 @@ KERNEL_ZSTD = "${@configure_from_version("5.9", "kernel_zstd", "", d)}"
 BALENA_CONFIGS:append = "${@bb.utils.contains('MACHINE_FEATURES','efi'," ${KERNEL_ZSTD}",'',d)}"
 BALENA_CONFIGS[kernel_zstd] = " \
     CONFIG_KERNEL_ZSTD=y \
+    CONFIG_CRYPTO_ZSTD=y \
 "
 
 BALENA_CONFIGS[aufs] = " \
@@ -830,6 +831,7 @@ def aufs_kernel_select(kernelversion):
         ('5.15.5','c2ce6a805f301e939724e9a48e523c7298b797e6'),
         ('5.15.36','8c2481e91182fc6959cb3ad56858c66d7a0c97fd'),
         ('5.15.41','5e018961ad499fc74e750ae857c33fbfc7641cfd'),
+        ('6.1','bfd38ec481836d86de5686dadca02e072b4f0584'),
     ])
 
 
@@ -938,8 +940,8 @@ python do_kernel_resin_aufs_fetch_and_unpack() {
         srcuri = "git://git.code.sf.net/p/aufs/aufs3-standalone.git;protocol=https;branch=aufs%s;name=aufs;destsuffix=aufs_standalone" % aufsbranch
     elif kernelversion.split('.')[0] is '4':
         srcuri = "git://github.com/sfjro/aufs4-standalone.git;protocol=https;branch=aufs%s;name=aufs;destsuffix=aufs_standalone" % aufsbranch
-    elif kernelversion.split('.')[0] is '5':
-        srcuri = "git://github.com/sfjro/aufs5-standalone.git;protocol=https;branch=aufs%s;name=aufs;destsuffix=aufs_standalone" % aufsbranch
+    elif kernelversion.split('.')[0] is '5' or kernelversion.split('.')[0] is '6':
+        srcuri = "git://github.com/sfjro/aufs-standalone.git;protocol=https;branch=aufs%s;name=aufs;destsuffix=aufs_standalone" % aufsbranch
 
     d.setVar('SRCREV_aufs', aufscommit)
     aufsgit = Git()

@@ -158,9 +158,15 @@ fi
 info "resin-init-flasher configuration found."
 
 # Find path to image
-_balena_image=$(find / -xdev -type f -name "${BALENA_IMAGE}")
+#
+# Check /tmp separately from /, as when migrating, we have the image copied to
+# a separate filesystem, and -xdev prohibits crossing filesystem boundaries
+_balena_image=$(find /tmp -xdev -type f -name "${BALENA_IMAGE}")
 if [ ! -f "${_balena_image}" ]; then
-    fail "Raw image ${BALENA_IMAGE}  not found in rootfs"
+    _balena_image=$(find / -xdev -type f -name "${BALENA_IMAGE}")
+    if [ ! -f "${_balena_image}" ]; then
+        fail "Raw image ${BALENA_IMAGE}  not found in rootfs"
+    fi
 fi
 BALENA_IMAGE="${_balena_image}"
 EXTERNAL_DEVICE_BOOT_PART_MOUNTPOINT="/mnt/boot"
@@ -202,6 +208,11 @@ fi
 if [ -z "${INTERNAL_DEVICE_KERNEL}" ]; then
     report_progress 100 "Installer is not supported on this device type."
     fail "Undefined target programming device - make sure INTERNAL_DEVICE_KERNEL is defined"
+fi
+
+if target_devices=$(jq -re '.installer.target_devices' "$CONFIG_PATH"); then
+    info "Using updated target devices list from configuration file: $target_devices"
+    INTERNAL_DEVICE_KERNEL="${target_devices}"
 fi
 
 # Flash Resin image on internal device

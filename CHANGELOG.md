@@ -1,6 +1,215 @@
 Change log
 -----------
 
+# v6.1.21
+## (2024-12-04)
+
+
+<details>
+<summary> Update tests/leviathan digest to 90d1685 [balena-renovate[bot]] </summary>
+
+> ## leviathan-2.31.66
+> ### (2024-12-04)
+> 
+> * Update core/contracts digest to 474ab2d [balena-renovate[bot]]
+> 
+
+</details>
+
+# v6.1.20
+## (2024-12-04)
+
+* kernel-module-build: update to 3.0.1 [Alex Gonzalez]
+* tests: secureboot: fix passing of kernel headers version [Alex Gonzalez]
+* tests: secureboot: add dm devices support in FDE test [Alex Gonzalez]
+* tests: secureboot: add imx specialization [Alex Gonzalez]
+
+# v6.1.19
+## (2024-12-03)
+
+* balena-image-initramfs: add zram module [Alex Gonzalez]
+* initrdscripts: add zram module [Alex Gonzalez]
+* resin-init-flasher: search /tmp explicitly [Joseph Kogut]
+* kernel-balena: enable CRYPTO_ZSTD for zram [Joseph Kogut]
+
+# v6.1.18
+## (2024-12-03)
+
+* Explicitly set GITHUB_TOKEN permissions for yocto workflow [Ryan Cooke]
+
+# v6.1.17
+## (2024-12-02)
+
+* resin-init-flasher: adapt EFI snippets to non-LUKS devices support [Alex Gonzalez]
+* balena-config-vars: adapt to flasher non-LUKS device support [Alex Gonzalez]
+* resin-init-flasher: add default LUKS configuration [Alex Gonzalez]
+* hostapp-update-hooks: replace the identification of encrypted partitions [Alex Gonzalez]
+
+# v6.1.16
+## (2024-11-27)
+
+* classes/kernel-balena: Add aufs patches for 6.1 kernels [Florin Sarbu]
+
+# v6.1.15
+## (2024-11-26)
+
+* initrdscripts/migrate: Allow overriding of target internal devices [Alexandru Costache]
+
+# v6.1.14
+## (2024-11-23)
+
+
+<details>
+<summary> Update tests/leviathan digest to 64ba6a3 [balena-renovate[bot]] </summary>
+
+> ## leviathan-2.31.65
+> ### (2024-11-23)
+> 
+> * Update balena-os/leviathan-worker to v2.9.50 [balena-renovate[bot]]
+> 
+> ## leviathan-2.31.64
+> ### (2024-11-23)
+> 
+> * Update core/contracts digest to 88fb8ad [balena-renovate[bot]]
+> 
+> ## leviathan-2.31.63
+> ### (2024-11-23)
+> 
+> * Update balena-io/balena-cli to v20 [balena-renovate[bot]]
+> 
+
+</details>
+
+# v6.1.13
+## (2024-11-22)
+
+* u-boot: env_resin: fix use of skip bootcount [Alex Gonzalez]
+* initrdscripts: migrate: panic on installation failure [Alex Gonzalez]
+
+# v6.1.12
+## (2024-11-21)
+
+* balena-os: allow to specify early console for OS development builds [Alex Gonzalez]
+
+# v6.1.11
+## (2024-11-20)
+
+
+<details>
+<summary> Update tests/leviathan digest to ae505eb [balena-renovate[bot]] </summary>
+
+> ## leviathan-2.31.62
+> ### (2024-11-20)
+> 
+> * Update actions/checkout digest to 11bd719 [balena-renovate[bot]]
+> 
+> ## leviathan-2.31.61
+> ### (2024-11-20)
+> 
+> * Update balena-io/balena-cli to v19.16.0 [balena-renovate[bot]]
+> 
+
+</details>
+
+# v6.1.10
+## (2024-11-15)
+
+
+<details>
+<summary> Update balena-supervisor to v16.7.7 [balena-renovate[bot]] </summary>
+
+> ## balena-supervisor-16.7.7
+> ### (2024-11-11)
+> 
+> * Firewall: allow DNS requests from custom Docker bridge networks [Christina Ying Wang]
+> 
+
+</details>
+
+# v6.1.9
+## (2024-11-15)
+
+* Update actions/setup-python digest to 0b93645 [balena-renovate[bot]]
+
+# v6.1.8
+## (2024-11-15)
+
+* recipes-kernel/linux-firmware: Package Intel AX210 firmware [Alexandru Costache]
+
+# v6.1.7
+## (2024-11-13)
+
+* Update actions/checkout digest to 11bd719 [balena-renovate[bot]]
+
+# v6.1.6
+## (2024-11-13)
+
+* Update balena-os/balena-yocto-scripts action to v1.27.10 [balena-renovate[bot]]
+
+# v6.1.5
+## (2024-11-13)
+
+* recipes-support/os-fan-profile: Don't print logs unless configured [Alexandru Costache]
+* Update tests/leviathan digest to 8234f44 [balena-renovate[bot]]
+
+# v6.1.4
+## (2024-11-12)
+
+* os: test for rootfs by-state link uniqueness [Joseph Kogut]
+* common: fix udev helper by-state link creation [Joseph Kogut]
+
+# v6.1.3
+## (2024-11-11)
+
+
+<details>
+<summary> Update balena-supervisor to v16.7.6 [balena-renovate[bot]] </summary>
+
+> ## balena-supervisor-16.7.6
+> ### (2024-11-07)
+> 
+> * Update firewall documentation [Felipe Lalanne]
+> 
+> ## balena-supervisor-16.7.5
+> ### (2024-11-07)
+> 
+> * Delete apps not in target from db by appUuid instead of appId [Christina Ying Wang]
+> 
+> ## balena-supervisor-16.7.4
+> ### (2024-10-28)
+> 
+> * Update express to v4.20.0 [SECURITY] [balena-renovate[bot]]
+> 
+> ## balena-supervisor-16.7.3
+> ### (2024-10-28)
+> 
+> * Add NXP support to balenaOS secure boot [Alex Gonzalez]
+> 
+> ## balena-supervisor-16.7.2
+> ### (2024-10-18)
+> 
+> * Use bookworm image to source journalctl binaries [Felipe Lalanne]
+> 
+> ## balena-supervisor-16.7.1
+> ### (2024-09-26)
+> 
+> * Add support for init field from compose [Christina Ying Wang]
+> 
+> ## balena-supervisor-16.7.0
+> ### (2024-09-02)
+> 
+> * Store rejected apps in the database [Felipe Lalanne]
+> * Set the app update status when reporting state [Felipe Lalanne]
+> * Add update status to types [Felipe Lalanne]
+> 
+
+</details>
+
+# v6.1.2
+## (2024-11-11)
+
+* modemmanager: Update outdated context of patches [Florin Sarbu]
+
 # v6.1.1
 ## (2024-11-07)
 
